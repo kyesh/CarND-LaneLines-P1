@@ -50,21 +50,8 @@ I used **_line_to_hough(x1, y1, x2, y2)_** to convert the lines into hough space
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-Cars/other obsitcals will throw it off
-Doesn't work well for changing pavement color.
-Assumes two lanes
-Assumes pavmet color
-
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+The shortcommings of my current stratagey include cars and other obsticals will not be filtered out by road color. Changes in ligting and road color will throw off my algorithem. I assume there are only two lanes which could cause issues if more than two lanes are in view or a false third lane is detected. 
 
 ### 3. Suggest possible improvements to your pipeline
 
-Some type of line memory so if line jumps to far or disapears use last line.
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+There are several improvments I would love to make but this assinment is way over due. First to deal with the changing road color I was thinking about using back projection or some self-made statical algorthem to determine whether or not a small square infront of the vehicle which we assume to be road matches the rest of the image and we filter out everythihg that fits within those bounds. This could also potentially be used to detect the edge of the road. Second is clustering the lines once they were hough space. This would make the system robust aganist more than lone line in the image as well as stray lines that are not lanes. Finally some type of previous line/lane location memory so that if the new lane location devaites to far from it's previous location. We can then dismiss the new location as noise and continue using the previous one until we get something more reasonable.
